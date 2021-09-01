@@ -51,9 +51,17 @@ function renderGame() {
   } else if (sum === 21) {
     message = "You've got Blackjack!";
     hasBlackJack = true;
+    // code below makes NEW CARD grayed out and disables it, but should be moved outside this function
+    document.getElementById("new-card").style.backgroundColor = "gray";
+    const newCardButton = document.querySelector("#new-card");
+    newCardButton.disabled = true;
   } else {
     message = "You're out of the game!";
     isAlive = false;
+    // code below makes NEW CARD grayed out and disables it, but should be moved outside this function
+    document.getElementById("new-card").style.backgroundColor = "gray";
+    const newCardButton = document.querySelector("#new-card");
+    newCardButton.disabled = true;
   }
   messageEl.textContent = message;
 }
