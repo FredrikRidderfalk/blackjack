@@ -50,6 +50,8 @@ function startGame() {
   cards.push(cardOne);
   cards.push(cardTwo);
   renderGame();
+  // code below enables the NEW CARD button again when startGame() runs
+  document.querySelector("#new-card").disabled = false;
 }
 
 // renderGame() renders the text "Cards: " once and after that the value of randomly generated cards through the for-loop
@@ -67,16 +69,23 @@ function renderGame() {
     message = "You've got Blackjack!";
     hasBlackJack = true;
     // code below makes NEW CARD grayed out and disables it, but should be moved outside this function
-    document.querySelector("#new-card").style.backgroundColor = "gray";
-    document.querySelector("#new-card").disabled = true;
+    // document.querySelector("#new-card").style.backgroundColor = "gray";
+    // document.querySelector("#new-card").disabled = true;
   } else {
     message = "You're out of the game!";
     isAlive = false;
     // code below makes NEW CARD grayed out and disables it, but should be moved outside this function
-    document.querySelector("#new-card").style.backgroundColor = "gray";
-    document.querySelector("#new-card").disabled = true;
+    // document.querySelector("#new-card").style.backgroundColor = "gray";
+    // document.querySelector("#new-card").disabled = true;
   }
   messageEl.textContent = message;
+}
+
+//  disableNewCard() disables the NEW CARD button, and it is enabled again when the START button is pressed
+function disableNewCard() {
+  if (isAlive === false || hasBlackJack === true) {
+    document.querySelector("#new-card").disabled = true;
+  }
 }
 
 // code below isn't working because it can't tell when isAlive === true
@@ -93,6 +102,8 @@ function newCard() {
     sum += card;
     cards.push(card);
     renderGame();
+    // disableNewCard() runs the function that sets the button's property to disabled = true if the player has gotten Blackjack or is out of the game;
+    disableNewCard();
   }
 }
 
@@ -105,3 +116,5 @@ function newCard() {
 // Disable the 'NEW CARD' button when the player has achieved blackjack or lost the game.
 
 // Fix so that the ace card can have both values 1 and 11.
+
+// Fix so that NEW CARD also disables when the player achieves Blackjack. Right now it only disables when isAlive = false
