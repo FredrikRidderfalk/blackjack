@@ -51,6 +51,7 @@ function startGame() {
   cards.push(cardTwo);
   renderGame();
   // code below enables the NEW CARD button again when startGame() runs
+  document.querySelector("#new-card").style.backgroundColor = "goldenrod";
   document.querySelector("#new-card").disabled = false;
 }
 
@@ -84,6 +85,7 @@ function renderGame() {
 //  disableNewCard() disables the NEW CARD button, and it is enabled again when the START button is pressed
 function disableNewCard() {
   if (isAlive === false || hasBlackJack === true) {
+    document.querySelector("#new-card").style.backgroundColor = "gray";
     document.querySelector("#new-card").disabled = true;
   }
 }
