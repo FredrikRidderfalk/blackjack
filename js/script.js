@@ -50,7 +50,7 @@ function startGame() {
   cards.push(cardOne);
   cards.push(cardTwo);
   renderGame();
-  // code below enables the NEW CARD button again when startGame() runs
+  // code below enables the NEW CARD button again when startGame() runs, and sets the background color back to the default
   document.querySelector("#new-card").style.backgroundColor = "goldenrod";
   document.querySelector("#new-card").disabled = false;
 }
@@ -69,15 +69,9 @@ function renderGame() {
   } else if (sum === 21) {
     message = "You've got Blackjack!";
     hasBlackJack = true;
-    // code below makes NEW CARD grayed out and disables it, but should be moved outside this function
-    // document.querySelector("#new-card").style.backgroundColor = "gray";
-    // document.querySelector("#new-card").disabled = true;
   } else {
     message = "You're out of the game!";
     isAlive = false;
-    // code below makes NEW CARD grayed out and disables it, but should be moved outside this function
-    // document.querySelector("#new-card").style.backgroundColor = "gray";
-    // document.querySelector("#new-card").disabled = true;
   }
   messageEl.textContent = message;
 }
@@ -85,6 +79,7 @@ function renderGame() {
 //  disableNewCard() disables the NEW CARD button, and it is enabled again when the START button is pressed
 function disableNewCard() {
   if (isAlive === false || hasBlackJack === true) {
+    // #new-card is grayed out while disabled
     document.querySelector("#new-card").style.backgroundColor = "gray";
     document.querySelector("#new-card").disabled = true;
   }
