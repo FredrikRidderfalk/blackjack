@@ -3,7 +3,7 @@
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [The goal](#the-goal)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -16,13 +16,13 @@
 
 ## Overview
 
-### The challenge
+### The goal
 
 Users should be able to:
 
-- [ ] View the optimal layout for the site depending on their device's screen size
+- [x] View the optimal layout for the site depending on their device's screen size
 - [x] Enter the game app through age verification
-- [ ] Play and restart the game as many times as they want
+- [x] Play and restart the game as many times as they want
 <!-- - Choose between a green, red, or black table. -->
 
 ### Screenshot
