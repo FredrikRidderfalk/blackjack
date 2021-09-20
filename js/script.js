@@ -9,13 +9,12 @@ if (age < 21) {
 
 // Blackjack game rules
 
-// below is an object, and if we put a function inside of it, that function would be called a 'method'
 let player = {
   name: "Fredrik",
   chips: 100,
 };
 
-// below is an array, and we push new data into this array through the newCard() function
+// we push new data into the array below through the newCard() function
 let cards = [];
 let sum = 0;
 let hasBlackJack = false;
@@ -31,13 +30,13 @@ let playerEl = document.querySelector("#player-el");
 playerEl.textContent = player.name + ": €" + player.chips;
 
 function getRandomCard() {
-  let randomNumer = Math.floor(Math.random() * 13) + 1;
-  if (randomNumer > 10) {
+  let randomNumber = Math.floor(Math.random() * 13) + 1;
+  if (randomNumber > 10) {
     return 10;
-  } else if (randomNumer === 1) {
+  } else if (randomNumber === 1) {
     return 11;
   } else {
-    return randomNumer;
+    return randomNumber;
   }
 }
 
@@ -85,13 +84,6 @@ function disableNewCard() {
   }
 }
 
-// code below isn't working because it can't tell when isAlive === true
-
-// if (!isAlive) {
-//   document.getElementById("new-card").style.backgroundColor='gray';
-//   const newCardButton = document.querySelector("#new-card")
-//   newCardButton.disabled = true;
-
 // newCard() adds the random cards to the 'sum' variable and pushes these randomly generated cards into the 'cards' array
 function newCard() {
   if (isAlive && !hasBlackJack) {
@@ -103,15 +95,3 @@ function newCard() {
     disableNewCard();
   }
 }
-
-// This is code for disabling a button. The idea is for the START-button to become disabled after the player's first press, and then enabled again after the player clicks the 'PLAY AGAIN' button.
-// const button = document.querySelector('button')
-// button.disabled = true;
-
-// Code a 'PLAY AGAIN' button.
-
-// Disable the 'NEW CARD' button when the player has achieved blackjack or lost the game.
-
-// Fix so that the ace card can have both values 1 and 11.
-
-// Fix so that NEW CARD also disables when the player achieves Blackjack. Right now it only disables when isAlive = false

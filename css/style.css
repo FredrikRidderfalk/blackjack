@@ -1,7 +1,7 @@
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", Arial,
     sans-serif;
-  background-image: url("https://media.istockphoto.com/vectors/vector-poker-black-background-playing-card-symbols-pattern-blackjack-vector-id868429174?k=6&m=868429174&s=612x612&w=0&h=4hGMxT-mUXDTEVTiWnogDku8TEcuCVwbM1roL6rD-TY=");
+  background-image: url("../images/blackjack-table-background.jpeg");
   background-size: cover;
   font-weight: bold;
   color: white;
@@ -10,6 +10,7 @@ body {
 
 h1 {
   color: goldenrod;
+  margin-top: 20vh;
 }
 
 #message-el {
